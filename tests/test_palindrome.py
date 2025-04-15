@@ -20,5 +20,17 @@ class TestPalindrome(unittest.TestCase):
         self.assertTrue(is_palindrome("refer"))
         self.assertTrue(is_palindrome("noon"))
 
+    def test_phrase_palindromes(self):
+        self.assertTrue(is_palindrome("A man, a plan, a canal: Panama."))
+        self.assertTrue(is_palindrome("Was it a car or a cat I saw?"))
+        self.assertTrue(is_palindrome("No lemon, no melon."))
+        self.assertTrue(is_palindrome("Eva, can I see bees in a cave?"))
+        self.assertTrue(is_palindrome("Mr. Owl ate my metal worm."))
+        self.assertTrue(is_palindrome("Anita lava la tina."))
+        self.assertTrue(is_palindrome("A mamá Roma le aviva el amor a mamá."))
+        self.assertTrue(is_palindrome("La ruta natural."))
+        self.assertTrue(is_palindrome("La ruta nos aportó otro paso natural."))
+        self.assertTrue(is_palindrome("Anita atina la palapa latina."))
+
 if __name__ == '__main__':
     unittest.main()
