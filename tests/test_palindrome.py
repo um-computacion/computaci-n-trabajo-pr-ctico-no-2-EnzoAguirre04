@@ -30,7 +30,6 @@ class TestPalindrome(unittest.TestCase):
         self.assertTrue(is_palindrome("A mamá Roma le aviva el amor a mamá."))
         self.assertTrue(is_palindrome("La ruta natural."))
         self.assertTrue(is_palindrome("La ruta nos aportó otro paso natural."))
-        self.assertTrue(is_palindrome("Anita atina la palapa latina."))
 
     def test_non_palindromes(self):
         self.assertFalse(is_palindrome("hello"))
@@ -61,6 +60,7 @@ class TestPalindrome(unittest.TestCase):
         self.assertTrue(is_palindrome("!!!"))
         self.assertTrue(is_palindrome("2002"))
         self.assertTrue(is_palindrome("Aa"))
+        self.assertTrue(is_palindrome("¿?"))
 
 if __name__ == '__main__':
     unittest.main()
