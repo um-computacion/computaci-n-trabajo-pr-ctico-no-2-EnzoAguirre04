@@ -2,18 +2,18 @@
 # Nombre y Apellido: Enzo Aguirre
 
 def is_palindrome(text):
-    return text == text[::-1]
+    cleaned_text = ''.join(char for char in text.lower() if char.isalnum())
+    return cleaned_text == cleaned_text[::-1]
 
 if __name__ == "__main__":
-    print("Incio del programa escriba 'Fin', para finalizarlo.")
+    print("Inicio del programa. Usa Ctrl+C para salir.\n")
 
-    while True:
-        text = input("Introduce un texto para verificar si es un palíndromo: ").strip().lower()
-        if text in ["'fin'", "'fin", "fin'", "fin"]:
-            break
-        elif is_palindrome(text):
-            print("Es un palíndromo.")
-        else:
-            print("No es un palíndromo.")
-
-    print("Fin del programa.")
+    try:
+        while True:
+            text = input("Introduce un texto para verificar si es un palíndromo: ").strip()
+            if is_palindrome(text):
+                print("Es un palíndromo.")
+            else:
+                print("No es un palíndromo.")
+    except KeyboardInterrupt:
+        print("\n\nFin del programa. ¡Hasta luego!")
