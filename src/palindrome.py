@@ -1,8 +1,15 @@
 # Trabajo Práctico 2: Desarrollo Guiado por Pruebas (TDD) - Detector de Palíndromos
 # Nombre y Apellido: Enzo Aguirre
 
+import unicodedata
+
 def is_palindrome(text):
-    cleaned_text = ''.join(char for char in text.lower() if char.isalnum())
+    # Normalizar: quitar tildes y diacríticos
+    text = unicodedata.normalize('NFKD', text)
+    # Eliminar todo lo que no sea alfanumérico (sin tildes) y convertir a minúsculas
+    cleaned_text = ''.join(
+        c for c in text if c.isalnum() and not unicodedata.combining(c)
+    ).lower()
     return cleaned_text == cleaned_text[::-1]
 
 if __name__ == "__main__":
