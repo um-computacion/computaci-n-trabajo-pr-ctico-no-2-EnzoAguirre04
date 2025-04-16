@@ -47,6 +47,20 @@ class TestPalindrome(unittest.TestCase):
         self.assertFalse(is_palindrome("mariposa"))
         self.assertFalse(is_palindrome("Buenos días"))
         self.assertFalse(is_palindrome("oyasumi"))
+    
+# Los casos Edge no serían ejemplos de casi palíndromos que en realidad no lo son?
+# No importa, lo dejo como en el ejemplo de GitHub.
+    def test_edge_cases(self):
+        self.assertTrue(is_palindrome(""))
+        self.assertTrue(is_palindrome("a"))
+        self.assertTrue(is_palindrome("A"))
+        self.assertTrue(is_palindrome(" "))
+        self.assertTrue(is_palindrome("XXX"))
+        self.assertTrue(is_palindrome("zZZ"))
+        self.assertTrue(is_palindrome("=="))
+        self.assertTrue(is_palindrome("!!!"))
+        self.assertTrue(is_palindrome("2002"))
+        self.assertTrue(is_palindrome("Aa"))
 
 if __name__ == '__main__':
     unittest.main()
